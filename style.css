@@ -5,8 +5,16 @@
     padding: 0;
 }
 
+body {
+    background-image: url("./newspaper.jpg");
+    background-size: cover;
+    
+}
+
 .container {
-    width: 80%;
+    background-color: #2f313188;
+    border-radius: 6px;
+    width: 90%;
     height: 500px;
     display: flex;
     align-items: center;
@@ -16,7 +24,8 @@
 h1 {
     font-family: 'Prompt', sans-serif;
     font-size: 45px;
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-bottom:20px;
     text-align: center;
 }
 table, td, tr {
@@ -24,7 +33,7 @@ table, td, tr {
     height: 25px;
     }
 table {
-    width: 55%;
+    width: 50%;
     border-collapse: collapse;
     text-align: center;
 }
@@ -34,10 +43,30 @@ table tr .preenchido {
 }
 
 .dicas {
-    margin: 15px;
+    margin: 25px;
     padding: 25px;
     width: 33%;
     height: 10%;
-    background-color: #e0e4e7;
+    background-color: #ecf0f3a4;
     border-radius: 6px;
+    font-size: 18px;
+}
+
+.dicas input {
+    height: 19px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 3px;
+    border: 0.1px solid black;
+}
+
+.dicas button {
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    background-color: rgba(19, 20, 19, 0.808);
+    height: 23px;
+    border-radius: 4px;
+    width: 64px;
+    font-size: 14px;
 }
