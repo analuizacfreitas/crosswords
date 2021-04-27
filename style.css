@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*background-color: rgb(211, 233, 206);
+    border-radius: 5px;*/
+}
+h1 {
+    font-family: 'Prompt', sans-serif;
+    font-size: 45px;
+    margin-top: 80px;
+    text-align: center;
+}
+table, td, tr {
+    border: 1px solid black;
+    height: 25px;
+    }
+table {
+    width: 55%;
+    border-collapse: collapse;
+    text-align: center;
+}
