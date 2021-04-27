@@ -7,18 +7,16 @@
 
 .container {
     width: 80%;
-    height: 580px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*background-color: rgb(211, 233, 206);
-    border-radius: 5px;*/
 }
 h1 {
     font-family: 'Prompt', sans-serif;
     font-size: 45px;
-    margin-top: 80px;
+    margin-top: 50px;
     text-align: center;
 }
 table, td, tr {
@@ -29,4 +27,17 @@ table {
     width: 55%;
     border-collapse: collapse;
     text-align: center;
+}
+
+table tr .preenchido {
+    background-color: #e0e4e7;
+}
+
+.dicas {
+    margin: 15px;
+    padding: 25px;
+    width: 33%;
+    height: 10%;
+    background-color: #e0e4e7;
+    border-radius: 6px;
 }
