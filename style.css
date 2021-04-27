@@ -7,8 +7,8 @@
 
 body {
     background-image: url("./newspaper.jpg");
-    background-size: cover;
-    
+    background-size: cover no-repeat;
+
 }
 
 .container {
@@ -17,8 +17,6 @@ body {
     width: 90%;
     height: 500px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     margin: auto;
 }
 h1 {
@@ -31,23 +29,30 @@ h1 {
 table, td, tr {
     border: 1px solid black;
     height: 25px;
+    width: 15px;
     }
 table {
+    float: left;
     width: 50%;
+    margin: 40px;
     border-collapse: collapse;
     text-align: center;
+    font-size: 18px;
 }
 
 table tr .preenchido {
     background-color: #e0e4e7;
+    color: #e0e4e700;/**/
 }
 
 .dicas {
+    overflow: visible;
+    float: right;
     margin: 25px;
     padding: 25px;
     width: 33%;
-    height: 10%;
-    background-color: #ecf0f3a4;
+    height: 1050px;
+    background-color: #ecf0f3bb;
     border-radius: 6px;
     font-size: 18px;
 }
@@ -65,8 +70,8 @@ table tr .preenchido {
     color: white;
     border: 1px solid white;
     background-color: rgba(19, 20, 19, 0.808);
-    height: 23px;
-    border-radius: 4px;
-    width: 64px;
+    height: 24px;
+    border-radius: 6px;
+    width: 30px;
     font-size: 14px;
 }
