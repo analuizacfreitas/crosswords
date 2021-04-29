@@ -488,254 +488,367 @@
             </tr>
         </table>
         <div class="dicas">
+            <div id="fim_jogo"></div>
             <div id="div_cpu">
                 1. Popularmente conhecido como o cérebro do computador:<br>
                 <input id="input_cpu">
-                <button onclick="verificarCampo()">➔</button> [3 letras]<br><br>
+                <button onclick="verificarCampoCPU()">➔</button> [3 letras]
             </div>
             <div id="div_ula">
-                2. Sigla de "Arithmetic Logic Unit":<br>
+                2. Responsável por executar as principais operações lógicas e aritméticas do computador:<br>
                 <input id="input_ula">
-                <button onclick="verificarCampo()">➔</button> [3 letras]<br><br>
+                <button onclick="verificarCampoULA()">➔</button> [3 letras]
             </div>
             <div id="div_registradores">
                 3. Unidades de memória da CPU que se encontram no topo da hierarquia de memória:<br>
                 <input id="input_registradores">
-                <button onclick="verificarCampo()">➔</button> [13 letras]<br><br>
+                <button onclick="verificarCampoRegistradores()">➔</button> [13 letras]
             </div>
             <div id="div_ram">
                 4. Sigla de "Random Access Memory":<br>
                 <input id="input_ram">
-                <button onclick="verificarCampo()">➔</button> [3 letras]<br><br>
+                <button onclick="verificarCampoRAM()">➔</button> [3 letras]
             </div>
             <div id="div_rom">
                 5. Sigla de "Read-Only Memory":<br>
                 <input id="input_rom">
-                <button onclick="verificarCampo()">➔</button> [3 letras]<br><br>
+                <button onclick="verificarCampoROM()">➔</button> [3 letras]
             </div>
             <div id="div_eprom">
                 6. Sigla de "Erasable Programmable Read-Only Memory":<br>
                 <input id="input_eprom">
-                <button onclick="verificarCampo()">➔</button> [5 letras]<br><br>
+                <button onclick="verificarCampoEPROM()">➔</button> [5 letras]
             </div>
             <div id="div_flash">
-                7. Memória de armazenamento não volátil. Seu conteúdo pode ser atualizado:<br>
+                7. Memória de armazenamento não volátil cujo conteúdo pode ser atualizado:<br>
                 <input id="input_flash">
-                <button onclick="verificarCampo()">➔</button> [5 letras]<br><br>
+                <button onclick="verificarCampoFlash()">➔</button> [5 letras]
             </div>
             <div id="div_memoria_massa">
                 8. Tipo de memória que armazena grandes volumes de informação:<br>
                 <input id="input_memoria_massa">
-                <button onclick="verificarCampo()">➔</button> [16 letras]<br><br>
+                <button onclick="verificarCampoMemMassa()">➔</button> [16 letras]
             </div>
             <div id="div_dma">
                 9. Sigla de "Direct Memory Access":<br>
                 <input id="input_dma">
-                <button onclick="verificarCampo()">➔</button> [3 letras]<br><br>
+                <button onclick="verificarCampoDMA()">➔</button> [3 letras]
             </div>
             <div id="div_cs">
                 10. Sigla de "Chip Select":<br>
                 <input id="input_cs">
-                <button onclick="verificarCampo()">➔</button> [2 letras]<br><br>
+                <button onclick="verificarCampoCS()">➔</button> [2 letras]
             </div>
             <div id="div_adress_bus">
                 11. Nomeclatura em inglês para barramento de endereços:<br>
                 <input id="input_adress_bus">
-                <button onclick="verificarCampo()">➔</button> [10 letras]<br><br>
+                <button onclick="verificarCampoAdressB()">➔</button> [10 letras]
             </div>
             <div id="div_data_bus">
                 12. Nomeclatura em inglês para barramento de dados:<br>
                 <input id="input_data_bus">
-                <button onclick="verificarCampo()">➔</button> [8 letras]<br><br>
+                <button onclick="verificarCampoDataB()">➔</button> [8 letras]
             </div>
             <div id="div_i5">
-                13. Lorem ipsum dolor sit amet consectetur adipisicing I5:<br>
+                13. Processador Intel lançado em 2009, destinado a desktops x86-64:<br>
                 <input id="input_i5">
-                <button onclick="verificarCampo()">➔</button> [2 letras]<br><br>
+                <button onclick="verificarCampoI5()">➔</button> [2 letras]
             </div>
             <div id="div_i7">
-                14. Lorem ipsum dolor sit amet consectetur adipisicing I7:<br>
+                14. Processador Intel lançado em 2008, com desempenho superior ao i5:<br>
                 <input id="input_i7">
-                <button onclick="verificarCampo()">➔</button> [2 letras]<br><br>
+                <button onclick="verificarCampoI7()">➔</button> [2 letras]
             </div>
             <div id="div_dual_core">
-                15. Lorem ipsum dolor sit amet consectetur DUAL-CORE:<br>
+                15. Nome dado à processadores com 2 núcleos:<br>
                 <input id="input_dual_core">
-                <button onclick="verificarCampo()">➔</button> [3 letras]<br><br>
+                <button onclick="verificarCampoDualC()">➔</button> [3 letras]
             </div>
             <div id="div_quad_core">
-                16. Lorem ipsum dolor sit amet consectetur QUAD-CORE:<br>
+                16. Nome dado à processadores com 4 núcleos:<br>
                 <input id="input_quad_core">
-                <button onclick="verificarCampo()">➔</button> [3 letras]
+                <button onclick="verificarCampoQuadC()">➔</button> [3 letras]
             </div>
         </div>
-    </div>
+        </div>
+        <div class="instrucao">
+            Em caso de espaço, use hífen ( - ) | Seu progresso: <span id="contador"></span>/16
+        </div>
 </body>
 </html>
 
 <script>
 
-    function verificarCampo() {
+    var progresso = 0;
+    contador.innerHTML = `${progresso}`
+
+    // CPU
+    function verificarCampoCPU() {
         var campoCPU = input_cpu.value;
-        if (campoCPU == "CPU") {
+        if (campoCPU.toUpperCase() == "CPU") {
             cpu_quad_c.style.color = "black";
             cpu_p.style.color = "black";
             cpu_u.style.color = "black";
             div_cpu.style.display = "none";
+            contador.innerHTML = `${++progresso}`;
+            contadorProgresso();
         }
+    }
+
+    // ULA
+    function verificarCampoULA() {
         var campoULA = input_ula.value;
-        if (campoULA == "ULA") {
+        if (campoULA.toUpperCase() == "ULA") {
             ula_u.style.color = "black";
             ula_dual_l.style.color = "black";
             ula_a.style.color = "black";
             div_ula.style.display = "none";
-        }
-        var campoRegistradores = input_registradores.value;
-        if (campoRegistradores == "REGISTRADORES") {
-            registradores_ram_r.style.color = "black";
-            registradores_e.style.color = "black";
-            registradores_g.style.color = "black";
-            registradores_i7_i.style.color = "black";
-            registradores_s.style.color = "black";
-            registradores_t.style.color = "black";
-            registradores_r2.style.color = "black";
-            registradores_a.style.color = "black";
-            registradores_memoria_d.style.color = "black";
-            registradores_o.style.color = "black";
-            registradores_r3.style.color = "black";
-            registradores_e2.style.color = "black";
-            registradores_cs_s.style.color = "black";
-            div_registradores.style.display = "none";
-        }
-        var campoRAM = input_ram.value;
-        if (campoRAM == "RAM") {
-            registradores_ram_r.style.color = "black";
-            ram_a.style.color = "black";
-            ram_m.style.color = "black";
-            div_ram.style.display = "none";
-        }
-        var campoROM = input_rom.value;
-        if (campoROM == "ROM") {
-            rom_r.style.color = "black";
-            rom_memoria_o.style.color = "black";
-            rom_m.style.color = "black";
-            div_rom.style.display = "none";
-        }
-        var campoEprom = input_eprom.value;
-        if (campoEprom == "EPROM") {
-            eprom_memoria_e.style.color = "black";
-            eprom_p.style.color = "black";
-            eprom_r.style.color = "black";
-            eprom_o.style.color = "black";
-            eprom_dma_m.style.color = "black";
-            div_eprom.style.display = "none";
-        }
-        var campoFlash = input_flash.value;
-        if (campoFlash == "FLASH") {
-            flash_f.style.color = "black";
-            flash_l.style.color = "black";
-            flash_a.style.color = "black";
-            flash_adress_s.style.color = "black";
-            flash_h.style.color = "black";
-            div_flash.style.display = "none";
-        }
-        var campoMemoriaDeMassa = input_memoria_massa.value;
-        if (campoMemoriaDeMassa == "MEMORIA-DE-MASSA") {
-            memoria_m1.style.color = "black";
-            eprom_memoria_e.style.color = "black";
-            memoria_m2.style.color = "black";
-            rom_memoria_o.style.color = "black";
-            memoria_r.style.color = "black";
-            memoria_i5_i.style.color = "black";
-            memoria_a1.style.color = "black";
-            memoria_space1.style.color = "black";
-            registradores_memoria_d.style.color = "black";
-            memoria_e.style.color = "black";
-            memoria_space2.style.color = "black";
-            memoria_m3.style.color = "black";
-            memoria_a2.style.color = "black";
-            memoria_s1.style.color = "black";
-            memoria_s2.style.color = "black";
-            memoria_data_a.style.color = "black";
-            div_memoria_massa.style.display = "none";
-        }
-        var campoDMA = input_dma.value;
-        if (campoDMA == "DMA") {
-            dma_d.style.color = "black";
-            eprom_dma_m.style.color = "black";
-            dma_a.style.color = "black";
-            div_dma.style.display = "none";
-        }
-        var campoCS = input_cs.value;
-        if (campoCS == "CS") {
-            cs_c.style.color = "black";
-            registradores_cs_s.style.color = "black";
-            div_cs.style.display = "none";
-        }
-        var campoAdressBus = input_adress_bus.value;
-        if (campoAdressBus == "ADRESS-BUS") {
-            adress_a.style.color = "black";
-            adress_data_d.style.color = "black";
-            adress_r.style.color = "black";
-            adress_quad_e.style.color = "black";
-            adress_s1.style.color = "black";
-            adress_s2.style.color = "black";
-            adress_space.style.color = "black";
-            adress_b.style.color = "black";
-            adress_u.style.color = "black";
-            flash_adress_s.style.color = "black";
-            div_adress_bus.style.display = "none";
-        }
-        var campoDataBus = input_data_bus.value;
-        if (campoDataBus == "DATA-BUS") {
-            adress_data_d.style.color = "black";
-            data_a1.style.color = "black";
-            data_t.style.color = "black";
-            memoria_data_a.style.color = "black";
-            data_space.style.color = "black";
-            data_b.style.color = "black";
-            data_dual_u.style.color = "black";
-            data_s.style.color = "black";
-            div_data_bus.style.display = "none";
-        }
-        var campoI5 = input_i5.value;
-        if (campoI5 == "I5") {
-            memoria_i5_i.style.color = "black";
-            i5_5.style.color = "black";
-            div_i5.style.display = "none";
-        }
-        var campoI7 = input_i7.value;
-        if (campoI7 == "I7") {
-            registradores_i7_i.style.color = "black";
-            i7_7.style.color = "black";
-            div_i7.style.display = "none";
-        }
-        var campoDualCore = input_dual_core.value;
-        if (campoDualCore == "DUAL-CORE") {
-            dual_d.style.color = "black";
-            data_dual_u.style.color = "black";
-            dual_a.style.color = "black";
-            ula_dual_l.style.color = "black";
-            dual_space.style.color = "black";
-            dual_c.style.color = "black";
-            dual_o.style.color = "black";
-            dual_r.style.color = "black";
-            dual_e.style.color = "black";
-            div_dual_core.style.display = "none";
-        }
-        var campoQuadCore = input_quad_core.value;
-        if (campoQuadCore == "QUAD-CORE") {
-            quad_q.style.color = "black";
-            quad_u.style.color = "black";
-            quad_a.style.color = "black";
-            quad_d.style.color = "black";
-            quad_space.style.color = "black";
-            cpu_quad_c.style.color = "black";
-            quad_o.style.color = "black";
-            quad_r.style.color = "black";
-            adress_quad_e.style.color = "black";
-            div_quad_core.style.display = "none";
+            contador.innerHTML = `${++progresso}`;
+            contadorProgresso();
         }
     }
+
+        // REGISTRADORES
+        function verificarCampoRegistradores() {
+            var campoRegistradores = input_registradores.value;
+            if (campoRegistradores.toUpperCase() == "REGISTRADORES") {
+                registradores_ram_r.style.color = "black";
+                registradores_e.style.color = "black";
+                registradores_g.style.color = "black";
+                registradores_i7_i.style.color = "black";
+                registradores_s.style.color = "black";
+                registradores_t.style.color = "black";
+                registradores_r2.style.color = "black";
+                registradores_a.style.color = "black";
+                registradores_memoria_d.style.color = "black";
+                registradores_o.style.color = "black";
+                registradores_r3.style.color = "black";
+                registradores_e2.style.color = "black";
+                registradores_cs_s.style.color = "black";
+                div_registradores.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // RAM
+        function verificarCampoRAM() {
+            var campoRAM = input_ram.value;
+            if (campoRAM.toUpperCase() == "RAM") {
+                registradores_ram_r.style.color = "black";
+                ram_a.style.color = "black";
+                ram_m.style.color = "black";
+                div_ram.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+                }
+        }
+
+        // ROM
+        function verificarCampoROM() {
+            var campoROM = input_rom.value;
+            if (campoROM.toUpperCase() == "ROM") {
+                rom_r.style.color = "black";
+                rom_memoria_o.style.color = "black";
+                rom_m.style.color = "black";
+                div_rom.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // EPROM
+        function verificarCampoEPROM() {
+            var campoEprom = input_eprom.value;
+            if (campoEprom.toUpperCase() == "EPROM") {
+                eprom_memoria_e.style.color = "black";
+                eprom_p.style.color = "black";
+                eprom_r.style.color = "black";
+                eprom_o.style.color = "black";
+                eprom_dma_m.style.color = "black";
+                div_eprom.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // FLASH
+        function verificarCampoFlash() {
+            var campoFlash = input_flash.value;
+            if (campoFlash.toUpperCase() == "FLASH") {
+                flash_f.style.color = "black";
+                flash_l.style.color = "black";
+                flash_a.style.color = "black";
+                flash_adress_s.style.color = "black";
+                flash_h.style.color = "black";
+                div_flash.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            } 
+        }
+
+        // MEMORIA-DE-MASSA
+        function verificarCampoMemMassa() {
+            var campoMemoriaDeMassa = input_memoria_massa.value;
+            if (campoMemoriaDeMassa.toUpperCase() == "MEMORIA-DE-MASSA") {
+                memoria_m1.style.color = "black";
+                eprom_memoria_e.style.color = "black";
+                memoria_m2.style.color = "black";
+                rom_memoria_o.style.color = "black";
+                memoria_r.style.color = "black";
+                memoria_i5_i.style.color = "black";
+                memoria_a1.style.color = "black";
+                memoria_space1.style.color = "black";
+                registradores_memoria_d.style.color = "black";
+                memoria_e.style.color = "black";
+                memoria_space2.style.color = "black";
+                memoria_m3.style.color = "black";
+                memoria_a2.style.color = "black";
+                memoria_s1.style.color = "black";
+                memoria_s2.style.color = "black";
+                memoria_data_a.style.color = "black";
+                div_memoria_massa.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // DMA
+        function verificarCampoDMA() {
+        var campoDMA = input_dma.value;
+            if (campoDMA.toUpperCase() == "DMA") {
+                dma_d.style.color = "black";
+                eprom_dma_m.style.color = "black";
+                dma_a.style.color = "black";
+                div_dma.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // CS
+        function verificarCampoCS() {
+            var campoCS = input_cs.value;
+            if (campoCS.toUpperCase() == "CS") {
+                cs_c.style.color = "black";
+                registradores_cs_s.style.color = "black";
+                div_cs.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // ADRESS-BUS
+        function verificarCampoAdressB() {
+            var campoAdressBus = input_adress_bus.value;
+            if (campoAdressBus.toUpperCase() == "ADRESS-BUS") {
+                adress_a.style.color = "black";
+                adress_data_d.style.color = "black";
+                adress_r.style.color = "black";
+                adress_quad_e.style.color = "black";
+                adress_s1.style.color = "black";
+                adress_s2.style.color = "black";
+                adress_space.style.color = "black";
+                adress_b.style.color = "black";
+                adress_u.style.color = "black";
+                flash_adress_s.style.color = "black";
+                div_adress_bus.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // DATA-BUS
+        function verificarCampoDataB() {
+            var campoDataBus = input_data_bus.value;
+            if (campoDataBus.toUpperCase() == "DATA-BUS") {
+                adress_data_d.style.color = "black";
+                data_a1.style.color = "black";
+                data_t.style.color = "black";
+                memoria_data_a.style.color = "black";
+                data_space.style.color = "black";
+                data_b.style.color = "black";
+                data_dual_u.style.color = "black";
+                data_s.style.color = "black";
+                div_data_bus.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // I5
+        function verificarCampoI5() {
+            var campoI5 = input_i5.value;
+            if (campoI5.toUpperCase() == "I5") {
+                memoria_i5_i.style.color = "black";
+                i5_5.style.color = "black";
+                div_i5.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // I7
+        function verificarCampoI7() {
+            var campoI7 = input_i7.value;
+            if (campoI7.toUpperCase() == "I7") {
+                registradores_i7_i.style.color = "black";
+                i7_7.style.color = "black";
+                div_i7.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // DUAL-CORE
+        function verificarCampoDualC() {
+            var campoDualCore = input_dual_core.value;
+            if (campoDualCore.toUpperCase() == "DUAL-CORE") {
+                dual_d.style.color = "black";
+                data_dual_u.style.color = "black";
+                dual_a.style.color = "black";
+                ula_dual_l.style.color = "black";
+                dual_space.style.color = "black";
+                dual_c.style.color = "black";
+                dual_o.style.color = "black";
+                dual_r.style.color = "black";
+                dual_e.style.color = "black";
+                div_dual_core.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        }
+
+        // QUAD-CORE
+        function verificarCampoQuadC() {
+            var campoQuadCore = input_quad_core.value;
+            if (campoQuadCore.toUpperCase() == "QUAD-CORE") {
+                quad_q.style.color = "black";
+                quad_u.style.color = "black";
+                quad_a.style.color = "black";
+                quad_d.style.color = "black";
+                quad_space.style.color = "black";
+                cpu_quad_c.style.color = "black";
+                quad_o.style.color = "black";
+                quad_r.style.color = "black";
+                adress_quad_e.style.color = "black";
+                div_quad_core.style.display = "none";
+                contador.innerHTML = `${++progresso}`;
+                contadorProgresso();
+            }
+        } 
+
+        function contadorProgresso() {
+            if (progresso == 16) {   
+                fim_jogo.innerHTML = `PARABÉNS! VOCÊ ACERTOU TODAS AS PALAVRAS E FINALIZOU O JOGO<br>
+                                      <br>Deseja jogar novamente?<br>
+                                      <button class="botao_fim_jogo" onclick="jogar_novamente()">SIM</button> 
+                                      <button class="botao_fim_jogo">NÃO</button>`
+            }
+        }
+
+        function jogar_novamente() {
+            location.reload();
+        }
 
 </script>
